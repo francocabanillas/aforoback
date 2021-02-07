@@ -35,13 +35,14 @@
 			
 			foreach($filas as $fila) {			
 				$elemento = array();
-				$elemento['id'] = $fila['id'];
-				$elemento['precio_total'] = $fila['precio_total'];
-				$elemento['fecha'] = $fila['fecha'];
-				$elemento['cliente_nombre'] = $fila['cliente_nombre'];
-				$elemento['celular'] = $fila['celular'];
-				$elemento['cliente_id'] = $fila['cliente_id'];
-				$elemento['estado'] = $fila['estado']	
+                                $elemento['id'] = $fila['id'];
+				$elemento['nombre'] = $fila['nombre'];
+				$elemento['direccion'] = $fila['direccion'];
+				$elemento['latitud'] = $fila['latitud'];
+				$elemento['longitud'] = $fila['longitud'];
+				$elemento['aforo'] = rand($fila['aforo']-10,$fila['aforo']+10);
+				$elemento['id_marca'] = $fila['id_marca'];
+				$elemento['imagen'] = $fila['imagen'];
 				$arreglo[] = $elemento;
 			}
 			return $arreglo;
