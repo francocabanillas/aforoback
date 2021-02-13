@@ -40,7 +40,7 @@
 				$elemento['direccion'] = $fila['direccion'];
 				$elemento['latitud'] = $fila['latitud'];
 				$elemento['longitud'] = $fila['longitud'];
-				$elemento['aforo'] = rand($fila['aforo']-10,$fila['aforo']+10);
+				$elemento['aforo'] = calculoAforo($fila['aforo']);
 				$elemento['id_marca'] = $fila['id_marca'];
 				$elemento['imagen'] = $fila['imagen'];
 				$arreglo[] = $elemento;
@@ -52,6 +52,10 @@
 			$mensaje  = '<b>Consulta inválida:</b> ' . $e->getMessage() . "<br/>";
 			die($mensaje);
 		}		
+	}
+
+	function calculoAforo($aforoactual) {
+		return rand($aforoactual-10,$aforoactual+10)
 	}
 	
 
