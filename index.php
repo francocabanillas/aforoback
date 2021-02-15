@@ -52,17 +52,11 @@ $app->put('/sedes/:id', function ($id) use ($app) {
     $direccion = $app->request()->post('direccion'); 
     $aforo = $app->request()->post('aforo'); 
     $latitud = $app->request()->post('latitud'); 
-    $longitud = "0"; 
+    $longitud = $app->request()->post('longitud');
     $idmarca = $app->request()->post('id_marca');
     $lista = actualizarMarca($id,$nombre,$direccion,$aforo,$latitud,$longitud,$idmarca);
     echo json_encode($lista);
  });
-
- 
- 
- 
- 
- 
 
 // guardar sedes
 $app->post('/sedes/:id', function($id) use ($app) {
@@ -74,7 +68,6 @@ $app->post('/sedes/:id', function($id) use ($app) {
     $lista = guardarSede($nombre,$direccion,$aforo,$latitud,$longitud,$id);
     echo json_encode($lista);    
 });
-
 
 // eliminar sede
 $app->delete('/sedes/:id', function($id) use ($app) {  
