@@ -51,3 +51,40 @@ INSERT INTO sedes (id, nombre, direccion, aforo, latitud, longitud, id_marca) VA
 INSERT INTO sedes (id, nombre, direccion, aforo, latitud, longitud, id_marca) VALUES ('14', 'Tienda Vivanda Javier Prado', 'Av. Javier Prado Oeste 999', '90', '0' , '0', '5');
 INSERT INTO sedes (id, nombre, direccion, aforo, latitud, longitud, id_marca) VALUES ('15', 'Tienda Vivanda Pezet', 'Av. Juan Antonio Pezet 1340, Lima', '105', '0' , '0', '5');
 INSERT INTO sedes (id, nombre, direccion, aforo, latitud, longitud, id_marca) VALUES ('16', 'Tienda Vivanda Monterrico', 'Av. La Encalada cuadra 5 esquina con av. Angamos Este cuadra 15', '130', '0' , '0', '5');
+
+CREATE TABLE afororegistros (
+  idmarca INT NOT NULL,
+  idsede INT NOT NULL,
+  aforo INT NOT NULL,
+  periodo INT NOT NULL,
+  mes INT NOT NULL,
+  dia INT NOT NULL,
+  fecha DATETIME NOT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+CREATE TABLE aforoestadisticas (
+  idmarca INT NOT NULL,
+  idsede INT NOT NULL,
+  promedio INT NOT NULL,
+  periodo INT NOT NULL,
+  mes INT NOT NULL,
+  dia INT NOT NULL,
+  hora INT NOT NULL,
+  tipo INT NOT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+CREATE TABLE usuarios (
+  id INT NOT NULL AUTO_INCREMENT,
+  nombre VARCHAR(200) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  usuario VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+INSERT INTO usuarios (id, nombre, email, usuario) VALUES ('1', 'Administrador', 'admin@aforoperu.pe','admin001');
